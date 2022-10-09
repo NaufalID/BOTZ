@@ -11,7 +11,7 @@ const ffmpeg = require('fluent-ffmpeg')
 const path = require("path")
 const { phone } = require("phone")
 const packagejson = JSON.parse(fs.readFileSync('./package.json')); 
-const { owner, namabot, namaowner, donasi, fakereply, Xteam } = require("./admin/config.json")
+const { owner, namabot, namaowner, donasi, fakereply, xteam } = require("./admin/config.json")
 const toMs = require('ms')
 const user = JSON.parse(fs.readFileSync('./lib/data.json')); 
 const { getBuffer, fetchJson, fetchText, getRandom, getGroupAdmins, runtime, sleep, makeid } = require("./lib/myfunc");
@@ -418,7 +418,7 @@ break
 if (cekUser("id", sender) == null) return Notdaftar()
                     F = body.slice(12)
                     if (args.length < 1) return reply(`[❗] Example :\n*${prefix}${command} 9`)
-                    anu = await fetchJson(`https://api.xteam.xyz/game/tebakangka?q=${F}&APIKEY=${Xteam}`)
+                    anu = await fetchJson(`https://api.xteam.xyz/game/tebakangka?q=${F}&APIKEY=${xteam}`)
                     anu1 = `➻ *KAMU* : ${anu.jawabanmu}\n`
                     anu1 += `➻ *BOT* : ${anu.jawabanbot}\n`
                     anu1 += `➻ *HASIL* : ${anu.hasil}\n`
