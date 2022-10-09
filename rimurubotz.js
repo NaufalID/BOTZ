@@ -414,6 +414,17 @@ if (!isOwner) return only("isOwner", rimurubotz, from)
 only("sukses", rimurubotz, from)
 setUser("-star", `${Tag()[0]}`, 1)
 break
+  case 'tebakangka':  
+if (cekUser("id", sender) == null) return Notdaftar()
+                    F = body.slice(12)
+                    if (args.length < 1) return reply(`[❗] Example :\n*${prefix}${command} 9`)
+                    anu = await fetchJson(`https://api.xteam.xyz/game/tebakangka?q=${F}&APIKEY=${Xteam}`)
+                    anu1 = `➻ *KAMU* : ${anu.jawabanmu}\n`
+                    anu1 += `➻ *BOT* : ${anu.jawabanbot}\n`
+                    anu1 += `➻ *HASIL* : ${anu.hasil}\n`
+                    anu1 += `➻ *POINT* : ${anu.poin}\n`
+                    reply(anu1)
+                    break
 case 'toimg':
 if (cekUser("id", sender) == null) return Notdaftar()
 if (isMedia || isQuotedSticker) { 
